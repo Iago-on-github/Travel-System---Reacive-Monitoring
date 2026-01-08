@@ -18,9 +18,9 @@ Atualmente, alunos que dependem do transporte universitário vivem "reféns" de 
 ## 💡 A Solução
 O **Travel-System** elimina a dependência de mensagens manuais e a vigilância constante, centralizando as responsabilidades no sistema com poucos cliques:
 
-1.  **Mapa em Tempo Real:** Visualização instantânea via streaming de dados, permitindo autonomia total ao aluno.
-2.  **Notificações Inteligentes:** Pushs automáticos informando distância do veículo, desvios de rota, imprevistos ou trânsito lento.
-3.  **Gestão Analítica:** Dashboards para diretores com relatórios sobre viagens, motoristas e frequência de alunos, transformando o transporte em uma operação baseada em dados.
+1. **Mapa em Tempo Real:** Visualização instantânea via streaming de dados, permitindo autonomia total ao aluno.
+2. **Notificações Inteligentes:** Pushs automáticos informando distância do veículo, desvios de rota, imprevistos ou trânsito lento.
+3. **Gestão Analítica:** Dashboards para diretores com relatórios sobre viagens, motoristas e frequência de alunos, transformando o transporte em uma operação baseada em dados.
 
 ---
 
@@ -35,12 +35,22 @@ A aplicação utiliza o paradigma reativo para sustentar o fluxo de dados em tem
 * **Infraestrutura e Segurança (Docker & JWT):** Containerização completa do ambiente via **Docker** e camada de segurança robusta com **Spring Security** e **JWT**.
 
 ---
-
-## 🛠️ Backend Stack 
-* **Linguagem:** Java 
+### 🛠️ Backend Stack
+* **Linguagem:** Java
 * **Framework Principal:** Spring Boot, Spring WebFlux, Spring Data Jpa, Spring Security, Spring AMQP, Hibernate, slf4j (logging)
 * **Mensageria:** RabbitMQ
 * **Bancos de Dados:** PostgreSQL, Redis
 * **Integração de Mapas:** MapBox API
 * **DevOps:** Docker & Docker Compose
 * **Migrações:** Flyway
+
+---
+
+```mermaid
+graph TD
+    A[Motorista/Frota] -->|Coordenadas| B(Spring WebFlux API)
+    B -->|Última Posição| C[(Redis Cache)]
+    B -->|Eventos/Alertas| D[RabbitMQ]
+    B -->|Histórico| E[(PostgreSQL)]
+    D -->|Push Notification| F[Estudante/Usuário]
+    B <-->|WebSocket| G[App Mobile/Web]
