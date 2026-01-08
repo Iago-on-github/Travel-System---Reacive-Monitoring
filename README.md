@@ -54,3 +54,15 @@ graph TD
     B -->|Histórico| E[(PostgreSQL)]
     D -->|Push Notification| F[Estudante/Usuário]
     B <-->|WebSocket| G[App Mobile/Web]
+```
+
+---
+
+<sub>**⚖️ Direitos Autorais e Licença**</sub>  
+<sub>Este projeto é um **produto proprietário**. O acesso ao código-fonte é restrito, e todos os direitos de propriedade intelectual são reservados. A reprodução, distribuição ou modificação sem autorização expressa é proibida.</sub>
+
+<sub>Desenvolvido e mantido por **Iago**</sub>
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/iago-araujo-dev/)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Iago-on-github)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:iago737@outlook.com)
